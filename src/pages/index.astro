@@ -1,8 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+const categories = await getCollection("blog");
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<div class="text-center">
+			<div class="border-2 border-black m-2 rounded-2xl p-4 bg-[#ada3f5]">
+				<h1 class="font-bold text-3xl">The New Mind</h1>
+				<h2>
+					This is a website where I'm going to publish a great amount of
+					different kind of things which I'm interested in.
+				</h2>
+			</div>
+			<div>
+				{categories.map((category) => (
+					<article>
+						<a href={`/${category.id}`}>{category.data.title}</a>
+					</article>
+				))}
+			</div>
+		</div>
+	</main>
 </Layout>
