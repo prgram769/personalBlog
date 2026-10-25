@@ -1,7 +1,11 @@
 ---
+import { render } from "astro:content";
+import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-const categories = await getCollection("blog");
+const blog = await getCollection("blog");
+const post = await getEntry("blog", "astroislands");
+const { Content } = await render(post);
 ---
 
 <Layout>
@@ -15,11 +19,17 @@ const categories = await getCollection("blog");
 				</h2>
 			</div>
 			<div>
-				{categories.map((category) => (
-					<article>
-						<a href={`/${category.id}`}>{category.data.title}</a>
-					</article>
-				))}
+				<ul>
+					{
+						blog.map((blogEntries) => (
+							<li>
+								<a href={`/${blogEntries.id}`}>{blogEntries.data.title}</a>
+							</li>
+						))
+					}
+				</ul>
+				<h1>{post.data.title}</h1>
+				<Content/>
 			</div>
 		</div>
 	</main>
