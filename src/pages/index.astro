@@ -1,17 +1,15 @@
 ---
-import { render } from "astro:content";
-import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
 const blog = await getCollection("blog");
-const post = await getEntry("blog", "astroislands");
-const { Content } = await render(post);
+const categories = await getCollection("categories");
 ---
 
 <Layout>
 	<main>
 		<div class="text-center">
-			<div class="border-2 border-black m-2 rounded-2xl p-4 bg-[#ada3f5]">
+			<div class="border-2 border-black m-4 rounded-2xl p-4 bg-[#ada3f5]">
 				<h1 class="font-bold text-3xl">The New Mind</h1>
 				<h2>
 					This is a website where I'm going to publish a great amount of
@@ -21,15 +19,18 @@ const { Content } = await render(post);
 			<div>
 				<ul>
 					{
-						blog.map((blogEntries) => (
+						// blog.map((blogEntries) => (
+						// 	<li>
+						// 		<Link path=`/astro/${blogEntries.id}` background="bg-red-400" text={blogEntries.data.title}/>
+						// 	</li>
+						// ))
+						categories.map((categoriesEntries) => (
 							<li>
-								<a href={`/${blogEntries.id}`}>{blogEntries.data.title}</a>
+								<Link path=`/${categoriesEntries.id}` background="bg-red-400" text={categoriesEntries.data.title}/>
 							</li>
 						))
 					}
 				</ul>
-				<h1>{post.data.title}</h1>
-				<Content/>
 			</div>
 		</div>
 	</main>
