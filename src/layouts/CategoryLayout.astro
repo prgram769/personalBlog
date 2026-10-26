@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+import "../../palette.json";
+import Link from "../components/Link.astro";
+import { getCollection } from "astro:content";
+
+const listElement = await getCollection("astro");
+const { title, background, divBackground, description, path, linkBackgroundColor } = Astro.props;
+---
+
+<!doctype html>
+<html class=`${background} m-0 w-full h-full` lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>The New Mind - {title}</title>
+	</head>
+	<body>
+    <main>
+      <div class="text-center">
+			<div class=`border-2 border-black m-4 rounded-2xl p-4 ${divBackground}`>
+				<h1 class="font-bold text-3xl">{title}</h1>
+				<h2>{description}</h2>
+			</div>
+			<div>
+				<ul class="grid grid-cols-3 gap-3 place-items-center">
+					{
+						listElement.map((listElementEntries) => (
+							<li class="p-2 m-2">
+								<Link path=`${path}${listElementEntries.id}` background=`${linkBackgroundColor}` text={listElementEntries.data.title}/>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+    </main>
+    <footer>
+      <!-- There will be here a footer layout -->
+    </footer>
+	</body>
+</html>

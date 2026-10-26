@@ -1,6 +1,6 @@
 ---
-title: "Astro Islands"
-description: "test"
+title: "Astro Components"
+description: "Amegos"
 tag: "astro"
 pubDate: 2025-03-03
 ---
