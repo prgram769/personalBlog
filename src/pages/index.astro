@@ -21,7 +21,7 @@ const categories = await getCollection("categories");
 					{
 						categories.map((categoriesEntries) => (
 							<li>
-								<Link path=`/${categoriesEntries.id}` background="bg-red-400" text={categoriesEntries.data.title}/>
+								<Link path={`/${categoriesEntries.id}`} background="bg-red-400" text={categoriesEntries.data.title}/>
 							</li>
 						))
 					}

@@ -21,7 +21,7 @@ const { title, background, divBackground, description, path, linkBackgroundColor
 	<body>
     <main>
       <div class="text-center">
-			<div class=`border-2 border-black m-4 rounded-2xl p-4 ${divBackground}`>
+			<div class={`border-2 border-black m-4 rounded-2xl p-4 ${divBackground}`}>
 				<h1 class="font-bold text-3xl">{title}</h1>
 				<h2>{description}</h2>
 			</div>
@@ -30,7 +30,7 @@ const { title, background, divBackground, description, path, linkBackgroundColor
 					{
 						listElement.map((listElementEntries) => (
 							<li class="p-2 m-2">
-								<Link path=`${path}${listElementEntries.id}` background=`${linkBackgroundColor}` text={listElementEntries.data.title}/>
+								<Link path={`${path}${listElementEntries.id}`} background={`${linkBackgroundColor}`} text={listElementEntries.data.title}/>
 							</li>
 						))
 					}
