@@ -1,8 +1,7 @@
----
-title: "Astro Components"
-description: "Amegos"
-tag: "astro"
-pubDate: 2025-03-03
+--- 
+title: "Frameworks front-end compatibility"  
+tag: "astro" 
+pubDate: 2026-10-29
 ---
 
 - **Agnostico respecto a librerias:** Puedes usar React, Vue, Svelte, Preact, SolidJS o Alpine.js dentro del mismo proyecto.

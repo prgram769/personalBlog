@@ -1,19 +1,34 @@
 ---
 import "../styles/global.css"
 import "../../palette.json"
+
+const { title, pageTitle, tag, pubDate } = Astro.props;
+
+let { hidden } = Astro.props;
+
+if (hidden != "true") {
+	hidden = "visible";
+} else {
+	hidden = "hidden"
+}
 ---
 
 <!doctype html>
-<html class="bg-[#bdabed] m-0 w-full h-full" lang="en">
+<html class="bg-white m-0 w-full h-full" lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>The New Mind</title>
+		<title>The New Mind - {title}</title>
 	</head>
 	<body>
+		<h1 class={`${hidden} text-center font-bold text-2xl font-mono p-2 m-2`}>{pageTitle}</h1>
+		<div class={`${hidden} text-center p-2 m-2 flex flex-row font-bold font-mono`}>
+			<p class="flex-wrap w-full">Tag: {tag}</p>
+			<p class="flex-wrap w-full">Fecha de publicacion: {pubDate}</p>
+		</div>
 		<slot />
 	</body>
 </html>

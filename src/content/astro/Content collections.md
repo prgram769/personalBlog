@@ -1,8 +1,7 @@
----
-title: "Astro Components"
-description: "Amegos"
-tag: "astro"
-pubDate: 2025-03-03
+--- 
+title: "Content collections"  
+tag: "astro" 
+pubDate: 2026-10-29
 ---
 
 - **Gestión estructurada:** Permite trabajar con markdown y mdx para blogs, documentacion o catalogos.

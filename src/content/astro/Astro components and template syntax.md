@@ -1,8 +1,7 @@
----
-title: "Astro Components"
-description: "Amegos"
-tag: "astro"
-pubDate: 2025-03-03
+--- 
+title: "Astro Components and template syntax"  
+tag: "astro" 
+pubDate: 2026-10-29
 ---
 
 - **Estructura .astro:** Se componen de dos secciones:

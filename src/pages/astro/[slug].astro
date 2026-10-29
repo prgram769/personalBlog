@@ -14,8 +14,23 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+
 ---
 
-<Layout>
-  <Content />
+<Layout
+  title={post.data.title}
+  ,
+  pageTitle={post.data.title}
+  ,
+  tag={post.data.tag}
+  ,
+  pubDate={post.data.pubDate}
+  >
+  <div class="max-w-none">
+    <!--add prose-invert -->
+    <div class="prose  prose-code:before:content-none prose-code:after:content-none lg:prose-xl justify-center p-4">
+      <Content />
+    </div>
+  </div>
 </Layout>

@@ -1,8 +1,7 @@
----
-title: "Astro Components"
-description: "Amegos"
-tag: "astro"
-pubDate: 2025-03-03
+--- 
+title: "Island Architecture"  
+tag: "astro" 
+pubDate: 2026-10-29
 ---
 
 En lugar de enviar todo el JavaScript de la aplicacion al navegador, Astro convierte la pagina en HTML estatico por defecto y trata los componentes interactivos como "islas" independientes.

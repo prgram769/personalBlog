@@ -1,8 +1,7 @@
----
-title: "Astro Components"
-description: "Amegos"
-tag: "astro"
-pubDate: 2025-03-03
+--- 
+title: "Server rendering"  
+tag: "astro" 
+pubDate: 2026-10-29
 ---
 
 - **Renderizado bajo demanda (on demand rendering/ SSR):** Permite pasar de una web puramente estatica a generar paginas dinamicas en el servidor segun la peticion del usuario.
